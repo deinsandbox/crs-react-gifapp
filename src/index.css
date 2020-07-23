@@ -1,0 +1,44 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  padding: 60p;
+}
+
+input {
+  color: gray;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+
+.card-item {
+  align-content: center;
+  background-color: gray;
+  border-radius: 6px;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.card-item img {
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-item figcaption {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
