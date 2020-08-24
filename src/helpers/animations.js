@@ -4,6 +4,7 @@ export const getAnimations = async (value) => {
   try {
     const GIPHY_KEY = process.env.REACT_APP_GIPHY_KEY;
     const GIPHY_API = process.env.REACT_APP_GIPHY_API;
+    const GIPHY_IMAGES = +process.env.REACT_APP_GIPHY_IMAGES;
 
     const options = {
       method: "get",
@@ -11,7 +12,7 @@ export const getAnimations = async (value) => {
       params: {
         q: value,
         rating: "g",
-        limit: 10,
+        limit: GIPHY_IMAGES,
         api_key: GIPHY_KEY,
       },
     };

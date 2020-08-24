@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Item = ({ url, title }) => (
-  <figure className="card-item animate__animated animate__fadeIn animate__delay-1s">
-    <img src={url} alt={title} />
-    {title && <figcaption>{title}</figcaption>}
-  </figure>
+  <img
+    className="masonry-item animate__animated animate__fadeIn animate__delay-1s"
+    src={url}
+    alt={title}
+  />
 );
 
 Item.propTypes = {

@@ -7,20 +7,22 @@ const Grid = ({ category }) => {
 
   return (
     <div>
-      <h3>{category}</h3>
+      <div className="masonry-wrapper">
+        <h3>{category}</h3>
 
-      <div className="card-container">
-        {isLoading && (
-          <span className="animate__animated animate__flash">Loading...</span>
-        )}
+        <div className="masonry">
+          {isLoading && (
+            <span className="animate__animated animate__flash">Loading...</span>
+          )}
 
-        {!isLoading &&
-          images.length > 0 &&
-          images.map((image) => {
-            return <Item key={image.id} {...image} />;
-          })}
+          {!isLoading &&
+            images.length > 0 &&
+            images.map((image) => {
+              return <Item key={image.id} {...image} />;
+            })}
 
-        {!isLoading && images.length === 0 && <span>No result found</span>}
+          {!isLoading && images.length === 0 && <span>No result found</span>}
+        </div>
       </div>
     </div>
   );

@@ -21,8 +21,8 @@ describe("Test on <Item /> component", () => {
   });
 
   test("should have fade_in class animation", () => {
-    const figure = wrapper.find("figure");
+    const img = wrapper.find("img");
     //console.log(JSON.stringify(figure.prop("className")));
-    expect(figure.hasClass("animate__fadeIn")).toBeTruthy();
+    expect(img.hasClass("animate__fadeIn")).toBeTruthy();
   });
 });
