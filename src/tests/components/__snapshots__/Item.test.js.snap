@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on <Item /> component should render the component correctly 1`] = `
+<figure
+  className="card-item animate__animated animate__fadeIn animate__delay-1s"
+>
+  <img
+    alt="Image description"
+    src="http://domine/image.png"
+  />
+  <figcaption>
+    Image description
+  </figcaption>
+</figure>
+`;
