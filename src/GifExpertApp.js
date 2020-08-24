@@ -23,12 +23,7 @@ const GifExpertApp = () => {
       <ol>
         {!!categories.length &&
           categories.map((category, index) => {
-            return (
-              <Grid
-                key={`${removeSpaces(category)}-${index}`}
-                category={category}
-              />
-            );
+            return <Grid key={`${index}`} category={category} />;
           })}
       </ol>
     </div>

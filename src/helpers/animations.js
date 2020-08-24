@@ -22,13 +22,11 @@ export const getAnimations = async (value) => {
       statusText,
     } = result;
     if (status === 200) {
-      const images = data.map(({ id, title, images }) => {
-        return {
-          id,
-          title,
-          url: images?.downsized_medium.url,
-        };
-      });
+      const images = data.map(({ id, title, images }) => ({
+        id,
+        title,
+        url: images?.downsized_medium.url,
+      }));
       return images;
     } else {
       throw new Error(`${status} - ${statusText}`);

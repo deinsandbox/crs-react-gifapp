@@ -1,26 +1,28 @@
 import React from "react";
-import useFetchAnimations from "../hooks/useFetchAnimations";
-import Images from "./Images";
+import useGetAnimations from "../hooks/useGetAnimations";
+import Item from "./Item";
 
 const Grid = ({ category }) => {
-  const { data, loading } = useFetchAnimations(category);
+  const { data: images, isLoading } = useGetAnimations(category);
 
   return (
-    <>
+    <div>
       <h3>{category}</h3>
 
-      {loading && <p>Loading...</p>}
+      <div className="card-container">
+        {isLoading && (
+          <span className="animate__animated animate__flash">Loading...</span>
+        )}
 
-      {!loading && !data.length && <p>Ops! No hay resultados!</p>}
+        {!isLoading &&
+          images.length > 0 &&
+          images.map((image) => {
+            return <Item key={image.id} {...image} />;
+          })}
 
-      {!!data.length && (
-        <div className="card-container">
-          {data.map((img) => (
-            <Images key={img.id} {...img} />
-          ))}
-        </div>
-      )}
-    </>
+        {!isLoading && images.length === 0 && <span>No result found</span>}
+      </div>
+    </div>
   );
 };
 
