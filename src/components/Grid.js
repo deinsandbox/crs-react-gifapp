@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import useGetAnimations from "../hooks/useGetAnimations";
 import Item from "./Item";
 
@@ -6,7 +7,7 @@ const Grid = ({ category }) => {
   const { data: images, isLoading } = useGetAnimations(category);
 
   return (
-    <div>
+    <>
       <div className="masonry-wrapper">
         <h3>{category}</h3>
 
@@ -24,8 +25,12 @@ const Grid = ({ category }) => {
           {!isLoading && images.length === 0 && <span>No result found</span>}
         </div>
       </div>
-    </div>
+    </>
   );
+};
+
+Grid.propTypes = {
+  category: PropTypes.string.isRequired,
 };
 
 export default Grid;

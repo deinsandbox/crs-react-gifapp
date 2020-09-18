@@ -7,9 +7,8 @@ import { removeSpaces } from "./helpers/strings";
 import AddCategory from "./components/AddCategory";
 import Grid from "./components/Grid";
 
-function App() {
-  const init = ["One Punch Man"];
-  const [category, setCategory] = useState(init);
+function App({ categories = [] }) {
+  const [category, setCategory] = useState(categories);
 
   return (
     <>
